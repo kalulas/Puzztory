@@ -1,0 +1,11 @@
+[project]
+name = "puzztory"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "cryptography>=41,<43",
+    "django==3.2.25",
+    "gunicorn>=21,<23",
+    "pillow>=9.5,<11",
+    "pymysql>=1.0.2,<2",
+]
