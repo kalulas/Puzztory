@@ -1,8 +1,15 @@
-# ignore vscode settings
+# Editor settings
 .vscode/
-node_modules/
-# ignore pyc files and swp files
+
+# Python
 *.pyc
 *.swp
-# ignore pycache
 **/__pycache__
+
+# uv-managed virtual environment
+.venv/
+
+# Local environment variables (do not commit secrets)
+.env
+.env.*
+!.env.example
