@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&%mqiqgxrhl*h-t330puv*esuf*+lg@*k3ir79hd8zs&$+k9&l'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*", "www.puzztory.cn", "puzztory.cn"]
+ALLOWED_HOSTS = ["puzztory.net", "www.puzztory.net"]
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'puzztory',
         'USER': 'root',
-        'PASSWORD': 'muzmuz',
+        'PASSWORD': os.environ['DB_PASSWORD'],
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -127,8 +127,7 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR),
-    ]
+]
 
 # use this if running with uwsgi + nginx
 # STATIC_ROOT = os.path.join(BASE_DIR, "static/")
